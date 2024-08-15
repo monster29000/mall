@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 后台资源管理Service实现类
+ * 后台资源管理Service实现�?
  * Created by macro on 2020/2/2.
  */
 @Service
@@ -54,6 +54,7 @@ public class UmsResourceServiceImpl implements UmsResourceService {
         PageHelper.startPage(pageNum,pageSize);
         UmsResourceExample example = new UmsResourceExample();
         UmsResourceExample.Criteria criteria = example.createCriteria();
+        // Optional is recommended to avoid explicit null checks
         if(categoryId!=null){
             criteria.andCategoryIdEqualTo(categoryId);
         }

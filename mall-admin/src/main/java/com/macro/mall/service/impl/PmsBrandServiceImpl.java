@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * 商品品牌管理Service实现类
+ * 商品品牌管理Service实现�?
  * Created by macro on 2018/4/26.
  */
 @Service
@@ -36,7 +36,7 @@ public class PmsBrandServiceImpl implements PmsBrandService {
     public int createBrand(PmsBrandParam pmsBrandParam) {
         PmsBrand pmsBrand = new PmsBrand();
         BeanUtils.copyProperties(pmsBrandParam, pmsBrand);
-        //如果创建时首字母为空，取名称的第一个为首字母
+        //如果创建时首字母为空，取名称的第一个为首字�?
         if (StrUtil.isEmpty(pmsBrand.getFirstLetter())) {
             pmsBrand.setFirstLetter(pmsBrand.getName().substring(0, 1));
         }
@@ -48,7 +48,7 @@ public class PmsBrandServiceImpl implements PmsBrandService {
         PmsBrand pmsBrand = new PmsBrand();
         BeanUtils.copyProperties(pmsBrandParam, pmsBrand);
         pmsBrand.setId(id);
-        //如果创建时首字母为空，取名称的第一个为首字母
+        //如果创建时首字母为空，取名称的第一个为首字�?
         if (StrUtil.isEmpty(pmsBrand.getFirstLetter())) {
             pmsBrand.setFirstLetter(pmsBrand.getName().substring(0, 1));
         }
@@ -82,6 +82,7 @@ public class PmsBrandServiceImpl implements PmsBrandService {
         if (!StrUtil.isEmpty(keyword)) {
             criteria.andNameLike("%" + keyword + "%");
         }
+        // Optional is recommended to avoid explicit null checks
         if(showStatus!=null){
             criteria.andShowStatusEqualTo(showStatus);
         }

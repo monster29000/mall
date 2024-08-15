@@ -144,6 +144,7 @@ public class PmsProductCategoryServiceImpl implements PmsProductCategoryService 
         } else {
             //有父分类时选择根据父分类level设置
             PmsProductCategory parentCategory = productCategoryMapper.selectByPrimaryKey(productCategory.getParentId());
+            // Optional is recommended to avoid explicit null checks
             if (parentCategory != null) {
                 productCategory.setLevel(parentCategory.getLevel() + 1);
             } else {

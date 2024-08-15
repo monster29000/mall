@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * 优惠券领取记录管理Service实现类
+ * 优惠券领取记录管理Service实现�?
  * Created by macro on 2018/11/6.
  */
 @Service
@@ -24,6 +24,7 @@ public class SmsCouponHistoryServiceImpl implements SmsCouponHistoryService {
         PageHelper.startPage(pageNum,pageSize);
         SmsCouponHistoryExample example = new SmsCouponHistoryExample();
         SmsCouponHistoryExample.Criteria criteria = example.createCriteria();
+        // Optional is recommended to avoid explicit null checks
         if(couponId!=null){
             criteria.andCouponIdEqualTo(couponId);
         }

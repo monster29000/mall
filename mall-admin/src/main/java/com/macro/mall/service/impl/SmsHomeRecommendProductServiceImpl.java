@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * 首页人气推荐管理Service实现类
+ * 首页人气推荐管理Service实现�?
  * Created by macro on 2018/11/7.
  */
 @Service
@@ -61,6 +61,7 @@ public class SmsHomeRecommendProductServiceImpl implements SmsHomeRecommendProdu
         if(!StrUtil.isEmpty(productName)){
             criteria.andProductNameLike("%"+productName+"%");
         }
+        // Optional is recommended to avoid explicit null checks
         if(recommendStatus!=null){
             criteria.andRecommendStatusEqualTo(recommendStatus);
         }
